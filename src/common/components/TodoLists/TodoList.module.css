@@ -1,0 +1,26 @@
+.list {
+    list-style: disc;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.button {
+    background-color: #e63946;
+    color: #fff;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.button:hover {
+    background-color: #c1121f;
+}
