@@ -1,0 +1,17 @@
+.todo-card {
+    border: 1px solid #e5e7eb; /* эквивалент border */
+    border-radius: 0.75rem; /* rounded-xl */
+    padding: 1rem; /* p-4 */
+    background-color: #ffffff; /* bg-white */
+    margin-bottom: 1rem; /* mb-4 */
+
+    /* shadow-md */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.todo-card h2 {
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 700; /* font-bold */
+    margin-bottom: 0.5rem; /* mb-2 */
+}

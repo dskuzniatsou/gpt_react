@@ -22,5 +22,11 @@
 }
 
 .button:hover {
-    background-color: #c1121f;
+    background-color: #81c112;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin: 4px 0;
 }

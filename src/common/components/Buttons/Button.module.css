@@ -1,0 +1,33 @@
+.btn {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* Варианты стилей */
+.btn-primary {
+    background-color: #35a4b3; /* синий */
+    color: white;
+}
+.btn-primary:hover {
+    background-color: #1712a5;
+}
+
+.btn-secondary {
+    background-color: #babcc1; /* серый */
+    color: #111827;
+}
+.btn-secondary:hover {
+    background-color: #8094b5;
+}
+
+.btn-danger {
+    background-color: #c63434; /* красный */
+    color: white;
+}
+.btn-danger:hover {
+    background-color: #ff001c;
+}

@@ -1,42 +1,53 @@
 import styles from "./TodoList.module.css";
 import { useState } from "react";
+import { Button } from "../Buttons/Button.tsx";
 
 type Todo = {
   id: number;
   title: string;
 };
 
-type Props = {
-  items: Todo[];
-  onAdd: (text: string) => void;
-  onDelete: (id: number) => void;
-};
 
-export const TodoList = ({ items, onAdd, onDelete }: Props) => {
-  const [inputValue, setInputValue] = useState("");
-  const handleAdd = () => {
-    if (inputValue.trim() === "") return;
-    onAdd(inputValue.trim());
-    setInputValue("");
-  };
+export const TodoList = () => {
+  const [todos, setTodos] = useState<Todo[]>([])
+  const [newTodo, setNewTodo] = useState("")
+  const [error, setError] = useState<string | null>(null)
+
+  const addTodoHandler = () => {
+    if (newTodo.trim() === "")  {
+      setError("Введите задачу")
+      return
+    }
+    if (newTodo.trim().length > 50) {
+    setError("Максимальная длина — 50 символов")
+    return}
+    setTodos((prev) => [{ id: Date.now(), title: newTodo }, ...prev])
+    setNewTodo("")
+    setError(null)
+  }
+  const deleteTodoHandler = (id: number) => {
+    setTodos((prev) => prev.filter((todo) => todo.id !== id))
+  }
+
   return (
     <>
       <input
         type={"text"}
         placeholder={"Введите задачу..."}
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
+        value={newTodo}
+        onChange={(e) => setNewTodo(e.target.value)}
       />
-      <button onClick={handleAdd} className={styles.button}>
-        Add
-      </button>
+      <Button onClick={addTodoHandler} variant={'primary'}>Add</Button>
+
+
+      {error && <p className="error">{error}</p>}
+
       <ul className={styles.list}>
-        {items.map((todo) => (
+        {todos.map((todo) => (
           <li key={todo.id} className={styles.item}>
             <span>{todo.title}</span>
-            <button onClick={() => onDelete(todo.id)} className={styles.button}>
-              Delete
-            </button>
+            <Button variant={"danger"} onClick={()=>deleteTodoHandler(todo.id)}>DELETE</Button>
+
           </li>
         ))}
       </ul>
