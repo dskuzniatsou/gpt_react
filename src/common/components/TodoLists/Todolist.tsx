@@ -31,13 +31,13 @@ export const TodoList = () => {
 
   return (
     <>
-      <input
+      <input className={styles.input}
         type={"text"}
         placeholder={"Введите задачу..."}
         value={newTodo}
         onChange={(e) => setNewTodo(e.target.value)}
       />
-      <Button onClick={addTodoHandler} variant={'primary'}>Add</Button>
+      <Button onClick={addTodoHandler} variant={'primary'} size={"small"}>Add</Button>
 
 
       {error && <p className="error">{error}</p>}
@@ -46,7 +46,7 @@ export const TodoList = () => {
         {todos.map((todo) => (
           <li key={todo.id} className={styles.item}>
             <span>{todo.title}</span>
-            <Button variant={"danger"} onClick={()=>deleteTodoHandler(todo.id)}>DELETE</Button>
+            <Button variant={"danger"} size={'small'} onClick={()=>deleteTodoHandler(todo.id)}>DELETE</Button>
 
           </li>
         ))}

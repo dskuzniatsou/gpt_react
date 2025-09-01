@@ -5,8 +5,23 @@
     border: none;
     cursor: pointer;
     transition: background-color 0.2s ease;
+    margin-left: 5px;
+}
+/* 🔹 Размеры */
+.btn-small {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
 }
 
+.btn-medium {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+}
+
+.btn-large {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.125rem;
+}
 /* Варианты стилей */
 .btn-primary {
     background-color: #35a4b3; /* синий */
